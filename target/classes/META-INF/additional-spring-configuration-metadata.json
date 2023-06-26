@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "aws.access-key-id",
+    "type": "java.lang.String",
+    "description": "A description for 'aws.access-key-id'"
+  },
+  {
+    "name": "aws.secretKey",
+    "type": "java.lang.String",
+    "description": "A description for 'aws.secretKey'"
+  },
+  {
+    "name": "frontend-url",
+    "type": "java.lang.String",
+    "description": "A description for 'frontend-url'"
+  }
+]}
