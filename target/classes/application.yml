@@ -1,4 +1,6 @@
-
+my:
+  env:
+    mode: DEV
 spring:
   datasource:
     url: jdbc:postgresql://kiruthika-spyglass-db.cluster-c4eqo06kg56i.us-east-1.rds.amazonaws.com:5432/postgres
@@ -15,4 +17,4 @@ spring:
           google:
             client-id: 283938601550-gvvho1452ajpjlg0528cr408v8suff33.apps.googleusercontent.com
             client-secret: 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
-frontend-url: http://localhost:5173
+frontend-url: http://kiruthika-project3-spyglass.s3-website-us-east-1.amazonaws.com
