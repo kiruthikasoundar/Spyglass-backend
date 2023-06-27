@@ -1,0 +1,12 @@
+com\skillstorm\demo\dtos\UserDto.class
+com\skillstorm\demo\repositories\GoalRepository.class
+com\skillstorm\demo\controllers\UserController.class
+com\skillstorm\demo\models\User.class
+com\skillstorm\demo\config\SecurityConfig.class
+com\skillstorm\demo\models\Goal.class
+com\skillstorm\demo\controllers\GoalController.class
+com\skillstorm\demo\repositories\UserRepository.class
+com\skillstorm\demo\services\UserService.class
+com\skillstorm\demo\dtos\GoalDto.class
+com\skillstorm\demo\SpyglassBackendApplication.class
+com\skillstorm\demo\services\GoalService.class

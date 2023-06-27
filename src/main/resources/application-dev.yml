@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/userdb
+    username: postgres
+    password: pgadmin
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 283938601550-gvvho1452ajpjlg0528cr408v8suff33.apps.googleusercontent.com
+            client-secret: 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
+  my:
+    env:
+      mode: DEV
+frontend-url: http://localhost:5173
