@@ -34,8 +34,8 @@ public class GoalController {
 	@Autowired
     private GoalService goalService;
 	
-	@Autowired
-	private AmazonS3 amazonS3;
+//	@Autowired
+//	private AmazonS3 amazonS3;
 	
     @Value("${aws.access-key}")
     private String accessKeyId;

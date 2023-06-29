@@ -19,8 +19,8 @@ spring:
             client-secret: ${CLIENT_SECRET}
 frontend-url: http://kiruthika-project3-spyglass.s3-website-us-east-1.amazonaws.com
 aws:
-  accessKey: ${S3_IMAGE_ACCESS_KEY}
-  secretKey: ${S3_IMAGE_SECRET_KEY}
+  access-key: ${S3_IMAGE_ACCESS_KEY}
+  secret-key: ${S3_IMAGE_SECRET_KEY}
   region: us-east-1
   bucket:
     name: kiruthika-project3-bucket

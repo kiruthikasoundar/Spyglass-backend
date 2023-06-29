@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 //import com.skillstorm.demo.services.UserService;
 
-import com.amazonaws.HttpMethod;
-import com.skillstorm.demo.services.AwsS3Service;
-
-import java.io.IOException;
+//import com.amazonaws.HttpMethod;
+//import com.skillstorm.demo.services.AwsS3Service;
+//import java.util.UUID;
+//import java.io.IOException;
 import java.util.Map;
-import java.util.UUID;
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -33,12 +33,12 @@ public class UserController {
 	@Autowired
 	private OAuth2AuthorizedClientService clientService;
 	
-	private final AwsS3Service awsS3Service;
-	
-	
-    public UserController(AwsS3Service awsS3Service) {
-        this.awsS3Service = awsS3Service;
-    }
+//	private final AwsS3Service awsS3Service;
+//	
+//	
+//    public UserController(AwsS3Service awsS3Service) {
+//        this.awsS3Service = awsS3Service;
+//    }
 
     @Value("${aws.bucket.name}")
     private String bucketName;

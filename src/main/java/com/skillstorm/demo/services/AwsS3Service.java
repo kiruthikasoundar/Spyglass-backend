@@ -17,12 +17,12 @@ import com.amazonaws.services.s3.AmazonS3;
 @Service
 public class AwsS3Service {
 
-    private final AmazonS3 amazonS3;
+//    private final AmazonS3 amazonS3;
 
 
-    public AwsS3Service(AmazonS3 amazonS3) {
-        this.amazonS3 = amazonS3;
-    }
+//    public AwsS3Service(AmazonS3 amazonS3) {
+//        this.amazonS3 = amazonS3;
+//    }
 
 //    public String generatePreSignedUrl(String userId, String bucketName, HttpMethod httpMethod, int validityMinutes) {
 //        String fileName = "image";

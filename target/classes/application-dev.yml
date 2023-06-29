@@ -15,12 +15,12 @@ spring:
       client:
         registration:
           google:
-            client-id: 283938601550-gvvho1452ajpjlg0528cr408v8suff33.apps.googleusercontent.com
-            client-secret: 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
+            client-id: ${CLIENT_ID}
+            client-secret: ${CLIENT_SECRET}
 frontend-url: http://localhost:5173
 aws:
-  accessKey: ${{ secrets.S3_IMAGE_ACCESS_KEY }}
-  secretKey: ${{ secrets.S3_IMAGE_SECRET_KEY }}
+  access-key: ${S3_IMAGE_ACCESS_KEY}
+  secret-key: ${S3_IMAGE_SECRET_KEY}
   region: us-east-1
   bucket:
     name: kiruthika-project3-bucket
