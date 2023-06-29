@@ -28,7 +28,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/goals")
-@CrossOrigin(allowCredentials = "true", originPatterns = "http://localhost:5173")
+@CrossOrigin(allowCredentials = "true", originPatterns = {"http://localhost:5173","http://kiruthika-project3-spyglass.s3-website-us-east-1.amazonaws.com"})
 public class GoalController {
 
 	@Autowired
