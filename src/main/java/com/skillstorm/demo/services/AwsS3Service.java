@@ -3,16 +3,16 @@ package com.skillstorm.demo.services;
 
 import org.springframework.stereotype.Service;
 import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
-import org.springframework.stereotype.Service;
-import com.amazonaws.HttpMethod;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.UUID;
+//import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
+//import org.springframework.stereotype.Service;
+//import com.amazonaws.HttpMethod;
+//import java.io.IOException;
+//import java.io.InputStream;
+//import java.net.HttpURLConnection;
+//import java.net.URL;
+//import java.util.Calendar;
+//import java.util.Date;
+//import java.util.UUID;
 
 @Service
 public class AwsS3Service {
