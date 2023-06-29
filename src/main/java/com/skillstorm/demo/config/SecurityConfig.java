@@ -40,9 +40,10 @@ public class SecurityConfig {
 		
 		http.cors().configurationSource(request -> {
 			CorsConfiguration corsConfig = new CorsConfiguration();
-			corsConfig.addAllowedOrigin(frontendUrl);
-			corsConfig.addAllowedOrigin("http://kiruthika-project3-spyglass.s3-website-us-east-1.amazonaws.com*");
-			corsConfig.addAllowedOrigin("http://Kiruthika-project2-backend-elastic-env.eba-eethncyr.us-east-1.elasticbeanstalk.com*");
+			corsConfig.setAllowedOrigins(Arrays.asList(frontendUrl,"http://kiruthika-project3-spyglass.s3-website-us-east-1.amazonaws.com","http://Kiruthika-project2-backend-elastic-env.eba-eethncyr.us-east-1.elasticbeanstalk.com"));
+//			corsConfig.addAllowedOrigin(frontendUrl);
+//			corsConfig.addAllowedOrigin("http://kiruthika-project3-spyglass.s3-website-us-east-1.amazonaws.com*");
+//			corsConfig.addAllowedOrigin("http://Kiruthika-project2-backend-elastic-env.eba-eethncyr.us-east-1.elasticbeanstalk.com*");
 			corsConfig.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
 			corsConfig.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type","Origin", "X-Auth-Token"));
 			corsConfig.setAllowCredentials(true);
