@@ -4,8 +4,8 @@ my:
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/userdb
-    username: postgres
-    password: pgadmin
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD_DEV}
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:

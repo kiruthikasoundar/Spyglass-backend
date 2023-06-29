@@ -19,6 +19,12 @@ public class SecurityConfig {
 	@Value("${frontend-url}")
 	private String frontendUrl;
 	
+    @Value("${aws.bucket.name}")
+    private String bucketName;
+    
+    @Value("${aws.region}")
+    private String s3RegionName;
+	
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
 		http.authorizeRequests()
@@ -39,6 +45,11 @@ public class SecurityConfig {
 			corsConfig.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
 			corsConfig.setAllowCredentials(true);
 			corsConfig.setMaxAge(3600L);
+//			corsConfig.addExposedHeader("Authorization"); 
+			
+            corsConfig.addAllowedOrigin("https://" + bucketName + ".s3.amazonaws.com");
+            corsConfig.addAllowedOrigin("https://" + bucketName + ".s3." + s3RegionName + ".amazonaws.com");
+
 			
 			UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 			source.registerCorsConfiguration("/**", corsConfig);

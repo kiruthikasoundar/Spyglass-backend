@@ -15,10 +15,6 @@ public class Goal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-//    @ManyToOne
-//    @JoinColumn(name = "user_id", nullable = false)
-//    private User user;
 	
 	@Column
 	private String userId;
@@ -157,22 +153,6 @@ public class Goal {
 	public void setSavedAmount(double savedAmount) {
 		this.savedAmount = savedAmount;
 	}
-
-//	public LocalDateTime getCreatedAt() {
-//		return createdAt;
-//	}
-//
-//	public void setCreatedAt(LocalDateTime createdAt) {
-//		this.createdAt = createdAt;
-//	}
-//
-//	public LocalDateTime getUpdatedAt() {
-//		return updatedAt;
-//	}
-//
-//	public void setUpdatedAt(LocalDateTime updatedAt) {
-//		this.updatedAt = updatedAt;
-//	}
 
 	@Override
 	public int hashCode() {

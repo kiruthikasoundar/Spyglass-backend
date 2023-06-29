@@ -2,18 +2,29 @@ package com.skillstorm.demo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientService;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.security.oauth2.core.oidc.user.DefaultOidcUser;
 import org.springframework.security.oauth2.core.user.OAuth2User;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 //import com.skillstorm.demo.services.UserService;
 
+import com.amazonaws.HttpMethod;
+import com.skillstorm.demo.services.AwsS3Service;
+
+import java.io.IOException;
 import java.util.Map;
+import java.util.UUID;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @RestController
 @CrossOrigin(allowCredentials = "true", originPatterns = {"http://localhost:5173","http://kiruthika-project3-spyglass.s3-website-us-east-1.amazonaws.com" })
@@ -22,13 +33,16 @@ public class UserController {
 	@Autowired
 	private OAuth2AuthorizedClientService clientService;
 	
-//	@Autowired
-//    private UserService userService;
+	private final AwsS3Service awsS3Service;
+	
+	
+    public UserController(AwsS3Service awsS3Service) {
+        this.awsS3Service = awsS3Service;
+    }
 
-//    public UserController(UserService userService) {
-//        this.userService = userService;
-//    }
-
+    @Value("${aws.bucket.name}")
+    private String bucketName;
+    
 	@Value("${frontend-url}")
 	private String frontendUrl;
 	
@@ -43,6 +57,16 @@ public class UserController {
 	public Map<String, Object> userInfo(@AuthenticationPrincipal OAuth2User user) {
 		return user.getAttributes();
 	}
+	
+	@PostMapping("/logout")
+	public ResponseEntity<String> logout(HttpServletRequest request, HttpServletResponse response) {
+	    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	    if (authentication != null) {
+	        new SecurityContextLogoutHandler().logout(request, response, authentication);
+	    }
+	    return ResponseEntity.ok("Logout successful");
+	}
+
 
 	@GetMapping("/access")
 	@ResponseBody
@@ -62,35 +86,5 @@ public class UserController {
 	public String idToken(@AuthenticationPrincipal OAuth2User user) {
 		return ((DefaultOidcUser) user).getIdToken().getTokenValue();
 	}
-//	
-//    @GetMapping("/users")
-//    public ResponseEntity<List<UserDto>> getAllUsers() {
-//        List<UserDto> users = userService.getAllUsers();
-//        return ResponseEntity.ok(users);
-//    }
-//
-//    @GetMapping("/users/{id}")
-//    public ResponseEntity<UserDto> getUserById(@PathVariable("id") Long id) {
-//        UserDto user = userService.getUserById(id);
-//        return ResponseEntity.ok(user);
-//    }
-//
-//    @PostMapping("/users")
-//    public ResponseEntity<UserDto> createUser(@Validated @RequestBody UserDto userDto) {
-//        UserDto createdUser = userService.createUser(userDto);
-//        return ResponseEntity.status(HttpStatus.CREATED).body(createdUser);
-//    }
-//
-//    @PutMapping("/users/{id}")
-//    public ResponseEntity<UserDto> updateUser(@PathVariable("id") Long id, @Validated @RequestBody UserDto userDto) {
-//        UserDto updatedUser = userService.updateUser(id, userDto);
-//        return ResponseEntity.ok(updatedUser);
-//    }
-//
-//    @DeleteMapping("/users/{id}")
-//    public ResponseEntity<Void> deleteUser(@PathVariable("id") Long id) {
-//        userService.deleteUser(id);
-//        return ResponseEntity.noContent().build();
-//    }
 }
-
+	

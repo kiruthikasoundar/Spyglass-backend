@@ -6,12 +6,15 @@ import com.skillstorm.demo.repositories.GoalRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
+@Transactional
 @Service
 public class GoalService {
 
@@ -23,6 +26,12 @@ public class GoalService {
 				.stream()
 				.map(Goal::toDto)
 				.collect(Collectors.toList());
+	}
+	
+	public GoalDto getGoalById(long id) {
+		Goal goal = goalRepository.findById(id)
+				.orElseThrow(() -> new NoSuchElementException());
+		return goal.toDto();
 	}
 
 	public List<GoalDto> getAllGoalsByUserId(String userId) {
