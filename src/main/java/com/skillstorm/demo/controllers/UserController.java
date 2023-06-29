@@ -14,12 +14,7 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
-//import com.skillstorm.demo.services.UserService;
 
-//import com.amazonaws.HttpMethod;
-//import com.skillstorm.demo.services.AwsS3Service;
-//import java.util.UUID;
-//import java.io.IOException;
 import java.util.Map;
 
 
@@ -32,13 +27,7 @@ public class UserController {
 
 	@Autowired
 	private OAuth2AuthorizedClientService clientService;
-	
-//	private final AwsS3Service awsS3Service;
-//	
-//	
-//    public UserController(AwsS3Service awsS3Service) {
-//        this.awsS3Service = awsS3Service;
-//    }
+
 
     @Value("${aws.bucket.name}")
     private String bucketName;
