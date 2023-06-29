@@ -19,7 +19,7 @@ spring:
           google:
             client-id: ${CLIENT_ID}
             client-secret: ${CLIENT_SECRET}
-frontend-url: https://kiruthika-project3-spyglass.s3-website-us-east-1.amazonaws.com
+frontend-url: http://kiruthika-project3-spyglass.s3-website-us-east-1.amazonaws.com
 aws:
   access-key: ${S3_IMAGE_ACCESS_KEY}
   secret-key: ${S3_IMAGE_SECRET_KEY}

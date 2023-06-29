@@ -27,7 +27,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @RestController
-@CrossOrigin(allowCredentials = "true", origins = {"http://localhost:5173","https://kiruthika-project3-spyglass.s3-website-us-east-1.amazonaws.com", "https://Kiruthika-project2-backend-elastic-env.eba-eethncyr.us-east-1.elasticbeanstalk.com"})
+@CrossOrigin(allowCredentials = "true", origins = {"http://localhost:5173","http://kiruthika-project3-spyglass.s3-website-us-east-1.amazonaws.com", "http://Kiruthika-project2-backend-elastic-env.eba-eethncyr.us-east-1.elasticbeanstalk.com"})
 public class UserController {
 
 	@Autowired
