@@ -47,6 +47,8 @@ public class SecurityConfig {
 			corsConfig.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type","Origin", "X-Auth-Token"));
 			corsConfig.setAllowCredentials(true);
 			corsConfig.setMaxAge(3600L);
+			corsConfig.addAllowedOrigin("https://accounts.google.com");
+			corsConfig.addAllowedHeader("Authorization");
 			corsConfig.addExposedHeader("Authorization"); 
 			corsConfig.addAllowedHeader("*");
 			
