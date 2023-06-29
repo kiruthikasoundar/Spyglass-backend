@@ -28,7 +28,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/goals")
-@CrossOrigin(allowCredentials = "true", originPatterns = {"http://localhost:5173","http://kiruthika-project3-spyglass.s3-website-us-east-1.amazonaws.com*", "http://Kiruthika-project2-backend-elastic-env.eba-eethncyr.us-east-1.elasticbeanstalk.com*"})
+@CrossOrigin(allowCredentials = "true",origins = "*", originPatterns = {"http://localhost:5173","http://kiruthika-project3-spyglass.s3-website-us-east-1.amazonaws.com*", "http://Kiruthika-project2-backend-elastic-env.eba-eethncyr.us-east-1.elasticbeanstalk.com*"})
 public class GoalController {
 
 	@Autowired
