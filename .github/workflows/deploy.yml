@@ -24,7 +24,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: artifact
-          path: target/spyglass-0.0.1-SNAPSHOT.jar
+          path: target/Spyglass-backend-0.0.1-SNAPSHOT.jar
           
   deploy:
     needs: build
