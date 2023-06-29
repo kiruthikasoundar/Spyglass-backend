@@ -48,6 +48,7 @@ public class SecurityConfig {
 			corsConfig.setAllowCredentials(true);
 			corsConfig.setMaxAge(3600L);
 			corsConfig.addExposedHeader("Authorization"); 
+			corsConfig.addAllowedHeader("*");
 			
             corsConfig.addAllowedOrigin("https://" + bucketName + ".s3.amazonaws.com");
             corsConfig.addAllowedOrigin("https://" + bucketName + ".s3." + s3RegionName + ".amazonaws.com");
