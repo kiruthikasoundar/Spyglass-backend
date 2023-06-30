@@ -40,6 +40,7 @@ public class SecurityConfig {
 		
 		http.cors().configurationSource(request -> {
 			CorsConfiguration corsConfig = new CorsConfiguration();
+			
 			corsConfig.setAllowedOrigins(Arrays.asList(frontendUrl,"http://kiruthika-project3-spyglass.s3-website-us-east-1.amazonaws.com","http://Kiruthika-project2-backend-elastic-env.eba-eethncyr.us-east-1.elasticbeanstalk.com", "https://accounts.google.com"));
 //			corsConfig.addAllowedOrigin(frontendUrl);
 //			corsConfig.addAllowedOrigin("http://kiruthika-project3-spyglass.s3-website-us-east-1.amazonaws.com*");

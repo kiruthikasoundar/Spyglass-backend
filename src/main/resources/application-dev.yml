@@ -11,6 +11,7 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
+      generate-ddl: true
       ddl-auto: update
   security:
     oauth2:
